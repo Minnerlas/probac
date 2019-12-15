@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "label": "build & debug file",
+      "type": "shell",
+      "command": "cd \"${workspaceFolder}\" && ./.vscode/run.sh ${fileBasenameNoExtension} ${workspaceFolder}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    }
+  ],
+  "version": "2.0.0"
+}
