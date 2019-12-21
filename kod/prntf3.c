@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
  
@@ -60,17 +59,23 @@ void prnt(char* format,void **n){
                     j=-j;
                     putchar('-');
                 }
-                fputs(inttoascii(j,10),stdout);
+                s=inttoascii(j,10);
+                fputs(s,stdout);
+                free(s);
                 break;
             case 'u':
                 j=*(unsigned int*)n[ind];
                 ind++;
-                fputs(inttoascii(j,10),stdout);
+                s=inttoascii(j,10);
+                fputs(s,stdout);
+                free(s);
                 break;
             case 'x':
                 j=*(unsigned int*)n[ind];
                 ind++;
-                fputs(inttoascii(j,16),stdout);
+                s=inttoascii(j,16);
+                fputs(s,stdout);
+                free(s);
                 break;
             case 'c':
                 j=*(int*)n[ind];
@@ -93,7 +98,9 @@ void prnt(char* format,void **n){
             case 'o':
                 j=*(int*)n[ind];
                 ind++;
-                fputs(inttoascii(j,8),stdout);
+                s=inttoascii(j,8);
+                fputs(s,stdout);
+                free(s);
                 break;
             case '%':
                 putchar('%');
